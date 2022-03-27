@@ -23,10 +23,12 @@ const sess = {
 
 app.use(session(sess));
 
-// const hbs = exphbs.create({ helpers });
+//CONST HBS WAS COMMENTED OUT - CLC TURNED THEM BACK ON
+const hbs = exphbs.create({ helpers });
 
-//app.engine('handlebars', hbs.engine);
-//app.set('view engine', 'handlebars');
+//APP.ENGINE AND APP.SET WERE COMMENTED OUT - CLC TURNED THEM BACK ON
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
