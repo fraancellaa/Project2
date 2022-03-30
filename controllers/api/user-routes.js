@@ -3,7 +3,9 @@ const { User } = require('../../models');
 
 // GET /api/users --- ALL users
 router.get('/', (req, res) => {
-    User.findAll()
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
         console.log(err);
@@ -14,6 +16,7 @@ router.get('/', (req, res) => {
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
+        attributes: { exclude: ['password'] },
         where: {
            id: req.params.id 
         }
@@ -46,64 +49,64 @@ router.post('/', (req, res) => {
     });
 });
 
-// Create new user
-router.post('/', async (req, res) => {
-    try {
-    const dbUserData = await User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-        });
+// // Create new user
+// router.post('/', async (req, res) => {
+//     try {
+//     const dbUserData = await User.create({
+//             username: req.body.username,
+//             email: req.body.email,
+//             password: req.body.password
+//         });
 
-        req.session.save(() => {
-            req.session.loggedIn = true;
+//         req.session.save(() => {
+//             req.session.loggedIn = true;
 
-            res.status(200).json(dbUserData);
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err)
-    }
-});
+//             res.status(200).json(dbUserData);
+//         });
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err)
+//     }
+// });
 
-// Login
-router.post('/login', (req, res) => {
-    User.findOne({
-            where: {
-                email: req.body.email,
-            }
-        })
-        .then(dbUserData => {
-            if (!dbUserData) {
-                res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
-            return;
-            }
+// // Login
+// router.post('/login', (req, res) => {
+//     User.findOne({
+//             where: {
+//                 email: req.body.email,
+//             }
+//         })
+//         .then(dbUserData => {
+//             if (!dbUserData) {
+//                 res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+//             return;
+//             }
 
-        const validPassword = dbUserData.checkPassword(req.body.password);
+//         const validPassword = dbUserData.checkPassword(req.body.password);
 
-        if (!validPassword) {
-            res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
-            return;
-        }
+//         if (!validPassword) {
+//             res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+//             return;
+//         }
 
-        req.session.save(() => {
-            req.session.loggedIn = true;
+//         req.session.save(() => {
+//             req.session.loggedIn = true;
 
-            res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
-        });
-    })
-}); 
+//             res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+//         });
+//     })
+// }); 
 
-// Logout
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(400).end();
-    }
-});
+// // Logout
+// router.post('/logout', (req, res) => {
+//     if (req.session.loggedIn) {
+//         req.session.destroy(() => {
+//             res.status(204).end();
+//         });
+//     } else {
+//         res.status(400).end();
+//     }
+// });
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
