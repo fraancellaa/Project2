@@ -69,33 +69,29 @@ router.post('/', (req, res) => {
 //     }
 // });
 
-// // Login
-// router.post('/login', (req, res) => {
-//     User.findOne({
-//             where: {
-//                 email: req.body.email,
-//             }
-//         })
-//         .then(dbUserData => {
-//             if (!dbUserData) {
-//                 res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
-//             return;
-//             }
+// Login
+router.post('/login', (req, res) => {
+    User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(400).json({ message: 'Incorrect email. Please try again!' });
+            return;
+            }
 
-//         const validPassword = dbUserData.checkPassword(req.body.password);
+        //verify user 
+        const validPassword = dbUserData.checkPassword(req.body.password);
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password. Please try again!' });
+            return;
+        }
 
-//         if (!validPassword) {
-//             res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
-//             return;
-//         }
-
-//         req.session.save(() => {
-//             req.session.loggedIn = true;
-
-//             res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
-//         });
-//     })
-// }); 
+        res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+}); 
 
 // // Logout
 // router.post('/logout', (req, res) => {
@@ -111,6 +107,7 @@ router.post('/', (req, res) => {
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
     User.update(req.body, {
+        individualHooks: true,
         where: {
             id: req.params.id
         }
