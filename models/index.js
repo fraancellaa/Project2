@@ -1,5 +1,13 @@
-//IMPORT THE USER MODEL AND EXPORT AN OBJECT WITH THE USER MODEL AS ITS PROPERTY:
-
 const User = require('./User');
+const Post = require('./Post');
+ 
+// create associations
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+});
 
-module.exports = { User };
+Post.belongsTo(User, {
+    foreignKey:'user_id',
+})
+
+module.exports = { User, Post }
