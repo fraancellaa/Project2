@@ -23,15 +23,9 @@ const sess = {
 
 // app.use(session(sess));
 
-<<<<<<< HEAD
  const hbs = exphbs.create({});
 
 app.engine('handlebars', hbs.engine);
-=======
- // const hbs = exphbs.create({ helpers });
-
-// app.engine('handlebars', hbs.engine);
->>>>>>> German
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
