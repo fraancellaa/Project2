@@ -51,4 +51,8 @@ router.get('/', (req, res) => {
   });
 >>>>>>> German
 
+router.get('/login', (req, res) => {
+    res.render('login');
+})
+
 module.exports = router;
