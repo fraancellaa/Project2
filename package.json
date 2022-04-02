@@ -18,21 +18,14 @@
     "bcrypt": "^5.0.0",
     "bulma": "^0.9.3",
     "connect-session-sequelize": "^7.0.4",
-<<<<<<< HEAD
     "dotenv": "^8.6.0",
-=======
-    "dotenv": "^8.2.0",
->>>>>>> b4c12a3e53537efc0750c344d718a3ec02cb57a0
     "express": "^4.17.3",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "mysql2": "^2.3.3",
-<<<<<<< HEAD
     "sequelize": "^6.17.0"
-=======
-    "sequelize": "^6.3.5"
->>>>>>> b4c12a3e53537efc0750c344d718a3ec02cb57a0
+   
   },
   "bugs": {
     "url": "https://github.com/fraancellaa/Project2/issues"
