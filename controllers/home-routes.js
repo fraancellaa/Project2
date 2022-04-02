@@ -24,4 +24,20 @@ router.get('/homepage', (req, res) => {
     });
 });
 
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard',  {
+        id: 1,
+        post_url: 'https://blahblog.com/first/',
+        title: 'Dashboard',
+        created_at: new Date(),
+        user: {
+            username: 'random_user'
+        }
+    });
+});
+
+router.get('/login', (req, res) => {
+    res.render('login');
+})
+
 module.exports = router;
