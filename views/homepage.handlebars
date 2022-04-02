@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    
     <!-- START NAV -->
     <nav class="navbar">
         <div class="container">
@@ -23,27 +24,24 @@
                 </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
-                <span></span>
-                <span></span>
+                        <span></span>
+                        <span></span>
                 </span>
             </div>
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item is-active">
+                    <!--<a class="navbar-item is-active">
                             Home
-                        </a>
+                        </a>  -->
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
+                    <div class="navbar-item  is-hoverable">
+                        <a class="navbar-item">
                                 Dashboard
                             </a>
                         <div class="navbar-dropdown">
                             <a class="navbar-item">
                                     Logout
                                 </a>
-                           <!-- <a class="navbar-item">
-                                    Profile
-                                </a> -->
                             <hr class="navbar-divider">
                             <div class="navbar-item">
                                 Login
@@ -152,6 +150,16 @@
         <!-- END ARTICLE FEED -->
    
         <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+        <script>
+             (function() {
+                const burger = document.querySelector('.burger');
+                const menu = document.querySelector('#'+burger.dataset.target);
+                    burger.addEventListener('click', function() {
+                    menu.classList.toggle('is-active');
+                    });
+            })();
+        </script>
+
  
 </body>
 
