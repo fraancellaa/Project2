@@ -5,11 +5,26 @@
                 <a href="{{post_url}}" target="_blank">{{title}}</a>
                 <span>({{post_url}})</span>
             </div>
-            <div class="meta">
-                by {{user.username}} on
-                {{created_at}}
-                |
-            <a href="/post/{{id}}"></a>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <!--<a class="navbar-item is-active">
+                            Home
+                        </a>  -->
+                    <div class="navbar-item  is-hoverable">
+                        <a class="navbar-item">
+                                Dashboard
+                            </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                    Logout
+                                </a>
+                            <hr class="navbar-divider">
+                            <div class="navbar-item">
+                                Login
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
     </li>
@@ -169,6 +184,16 @@
         <!-- END ARTICLE FEED -->
    
         <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+        <script>
+             (function() {
+                const burger = document.querySelector('.burger');
+                const menu = document.querySelector('#'+burger.dataset.target);
+                    burger.addEventListener('click', function() {
+                    menu.classList.toggle('is-active');
+                    });
+            })();
+        </script>
+
  
 </body>
 
