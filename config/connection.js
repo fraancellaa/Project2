@@ -39,10 +39,5 @@ const sequelize = process.env.JAWSDB_URL
       dialect: 'mysql',
       port: 3306
     });
-<<<<<<< .merge_file_a13136
-
-module.exports = sequelize;
-=======
     
 module.exports = sequelize;
->>>>>>> .merge_file_a13584
