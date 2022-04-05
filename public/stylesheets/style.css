@@ -117,6 +117,26 @@ footer {
     border-radius: 50%;
 }
 
+.logo-image {
+    flex-wrap: wrap-reverse;
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+
+}
+
+.new-post {
+    flex-wrap: wrap-reverse;
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+    border: transparent;
+  
+
+}
+
 .media-center {
     display: block;
     margin-bottom: 1rem;
@@ -172,6 +192,8 @@ section {
 }
 
 .wrapper {
+    max-width: 100%;
+    height: max-content;
     border-radius: 50px;
 }
 
@@ -218,3 +240,4 @@ a.button3:hover {
         margin: 0.2em auto;
     }
 }
+
