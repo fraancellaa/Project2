@@ -53,20 +53,6 @@ router.get('/', (req, res) => {
 //         });
 // });
 
-// 2nd time
-// router.post('/', (req, res) => {
-//     User.create({
-//         username: req.body.username,
-//         email: req.body.email,
-//         password: req.body.password
-//     })
-//     .then(dbUserData => res.json(dbUserData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-
 // Create new user - sign up option
 router.post('/', async (req, res) => {
     try {

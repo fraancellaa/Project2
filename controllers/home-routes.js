@@ -44,4 +44,15 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
+router.get('/logout', (req, res) => {
+    if (!req.session) {
+        req.session.destroy(function(err) {
+            res.redirect('/homepage');
+        });
+    }
+    else {
+        res.redirect('/homepage');
+    }
+})
+
 module.exports = router;
