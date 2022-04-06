@@ -13,11 +13,13 @@
   <div class="wrapper">
     <main>
       {{{ body }}}
+       </div>
     </main>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
     <footer>
       Welcome to your virtual journal!
     </footer>
-  </div>
 </body>
-
 </html>
