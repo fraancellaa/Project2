@@ -172,7 +172,8 @@ div a:hover {
 }
 
 main {
-  border-radius: 50px;
+  border-radius: 50px3;
+  align-content: center;
 }
 
 section {
@@ -180,7 +181,7 @@ section {
 }
 
 .wrapper {
-  border-radius: 50px;
+  justify-content: center;
 }
 
 .article-body:hover {
