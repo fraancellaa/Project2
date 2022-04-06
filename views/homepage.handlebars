@@ -1,3 +1,36 @@
+{{!-- <ol class="post-list">
+    <li>
+        <article class="post">
+            <div class="title">
+                <a href="{{post_url}}" target="_blank">{{title}}</a>
+                <span>({{post_url}})</span>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <!--<a class="navbar-item is-active">
+                            Home
+                        </a>  -->
+
+                    <div class="navbar-item  is-hoverable">
+                        <a class="navbar-item">
+                                Dashboard
+                            </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                    Logout
+                                </a>
+                            <hr class="navbar-divider">
+                            <div class="navbar-item">
+                                Login
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </li>
+</ol> --}}
+
 <!DOCTYPE html>
 <html>
 
@@ -31,8 +64,13 @@
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item is-active">
+<<<<<<< HEAD
                         Home
                     </a>
+=======
+                            <a href="/">Home</a>
+                        </a>
+>>>>>>> 5802a8f79523dfee4bb9e5f15886fd864e6c825a
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
@@ -47,7 +85,7 @@
                                 </a> -->
                             <hr class="navbar-divider">
                             <div class="navbar-item">
-                                Login
+                                <a href="/login">Login</a>
                             </div>
                         </div>
                     </div>
@@ -157,11 +195,29 @@
 
         </section>
     </div>
+<<<<<<< HEAD
 
     <!-- END ARTICLE FEED -->
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
 
+=======
+        
+        <!-- END ARTICLE FEED -->
+   
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+        <script>
+             (function() {
+                const burger = document.querySelector('.burger');
+                const menu = document.querySelector('#'+burger.dataset.target);
+                    burger.addEventListener('click', function() {
+                    menu.classList.toggle('is-active');
+                    });
+            })();
+        </script>
+
+ 
+>>>>>>> 5802a8f79523dfee4bb9e5f15886fd864e6c825a
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 //IMPORT SEQUELIZE CONSTRUCTOR FROM THE LIB
+
 const Sequelize = require('sequelize');
 
 // CONNECT DB - PASSED IN USERNAME AND PASSWORD- REPLACED AND BETTER PROTECTED BY THE .ENV FILE ACCESSED VIA NPM PACKAGE DOTENV
@@ -24,6 +25,7 @@ require('dotenv').config();
 //       port: 3306
 //     });
     
+
 // if (process.env.JAWSDB_URL) {
 //   const sequelize = new Sequelize(process.env.JAWSDB_URL);
 // } else {
