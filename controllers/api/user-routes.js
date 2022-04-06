@@ -1,17 +1,18 @@
 const router = require('express').Router();
+const session = require('express-session');
 const { User } = require('../../models');
 const auth = require('../../utils/auth')
 // GET /api/users --- ALL users
-// router.get('/', (req, res) => {
-//     User.findAll({
-//         attributes: { exclude: ['password'] }
-//     })
-//     .then(dbUserData => res.json(dbUserData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     })
-// });
+router.get('/', (req, res) => {
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
 
 // GET /api/users/1
 // router.get('/:id', (req, res) => {
@@ -66,7 +67,7 @@ const auth = require('../../utils/auth')
 //     });
 // });
 
-// Create new user
+// Create new user - sign up option
 router.post('/', async (req, res) => {
     try {
       const dbUserData = await User.create({
@@ -74,7 +75,8 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
-  
+      console.log("request session ----------", req.session);
+
       req.session.save(() => {
         req.session.loggedIn = true;
   
@@ -85,6 +87,7 @@ router.post('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
 
 
 // Login 
@@ -101,7 +104,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const validPassword = await dbUserData.checkPassword(req.body.password);
+        const validPassword = dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
@@ -109,7 +112,9 @@ router.post('/login', async (req, res) => {
         }
         req.session.save(() => {
             req.session.loggedIn = true;
-      
+
+          console.log(req.session.loggedIn);
+
             res
               .status(200)
               .json({ user: dbUserData, message: 'You are now logged in!' });
