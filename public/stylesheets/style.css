@@ -158,7 +158,10 @@ div.column.is-8:first-child {
 
 .blog-body {
   line-height: 1.4;
+<<<<<<< HEAD
   
+=======
+>>>>>>> 4f062da4f5caec52189f7a76d3a51bbdc3e4398e
 }
 
 .promo-block .container {
@@ -228,7 +231,10 @@ a.button3:hover {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f062da4f5caec52189f7a76d3a51bbdc3e4398e
 .save-blog {
   display: none;
 }

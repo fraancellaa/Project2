@@ -1,25 +1,38 @@
-async function newFormHandler(event) {
-    event.preventDefault();
+// async function newFormHandler(event) {
+//     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const port_url = document.querySelector('input[name="post-url"]').value;
+// const { application } = require("express");
+// const { json } = require("sequelize/types");
 
-    const response = await fetch(`/api/posts`, {
-        method: 'POST',
-        body: JSON.stringify({
-            title,
-            post_url
-        }),
-        headers: {
-            'Content-type': 'application.json'
-        }
-    });
+//     const title = document.querySelector('input[name="post-title"]').value;
+//     const port_url = document.querySelector('input[name="post-url"]').value;
 
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert(response.statusText);
-    }
+//     const response = await fetch(`/api/posts`, {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             title,
+//             post_url
+//         }),
+//         headers: {
+//             'Content-type': 'application.json'
+//         }
+//     });
+
+//     if (response.ok) {
+//         document.location.replace('/dashboard');
+//     } else {
+//         alert(response.statusText);
+//     }
+// }
+
+// document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+
+
+
+let newBlogBtn;
+let saveNoteBtn;
+
+if (window.location.pathname === '/dashboard') {
+    newBlogBtn = document.querySelector('.new-blog');
+    saveNoteBtn = document.querySelector('.save-blog');
 }
-
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
