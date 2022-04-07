@@ -12,8 +12,8 @@ Post.findAll({
     },
     attributes: [
         'id',
-        'post_url',
-        'title',
+        'blog_text',
+        'blog_title',
         'created_at'
     ],
     include: [
