@@ -1,9 +1,10 @@
+//HOME-ROUTES ARE FOR ALL USER-FACING ROUTES
 const router = require('express').Router();
 const sequelize = require('../config/connection')
-const {Post, User } = require('../models');
+const { Post, User } = require('../models');
 
 router.get('/', (req, res) => {
-    res.render('homepage',  {
+    res.render('homepage', {
         id: 1,
         post_url: 'https://blahblog.com/first/',
         title: 'Home Page',
@@ -15,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/homepage', (req, res) => {
-    res.render('homepage',  {
+    res.render('homepage', {
         id: 1,
         post_url: 'https://blahblog.com/first/',
         title: 'Dashboard',
@@ -27,7 +28,7 @@ router.get('/homepage', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard',  {
+    res.render('dashboard', {
         id: 1,
         post_url: 'https://blahblog.com/first/',
         title: 'Dashboard',
