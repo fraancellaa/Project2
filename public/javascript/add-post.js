@@ -1,8 +1,11 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const port_url = document.querySelector('input[name="post-url"]').value;
+// const { application } = require("express");
+// const { json } = require("sequelize/types");
+
+    const title = document.querySelector('input[name="blog_title"]').value;
+    const post_url = document.querySelector('input[name="blog_text"]').value;
 
     const response = await fetch(`/api/posts`, {
         method: 'POST',
@@ -23,3 +26,13 @@ async function newFormHandler(event) {
 }
 
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+
+
+
+let newBlogBtn;
+let saveNoteBtn;
+
+if (window.location.pathname === '/dashboard') {
+    newBlogBtn = document.querySelector('.new-blog');
+    saveNoteBtn = document.querySelector('.save-blog');
+}

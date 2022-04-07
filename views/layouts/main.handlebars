@@ -11,6 +11,7 @@
 
 <body>
   <div class="wrapper">
+<<<<<<< HEAD
     <header>
       <h1>Blah-blah-blog</h1>
     </header>
@@ -19,14 +20,18 @@
         <button id="logout">Logout</button>
         <a href="/login">Login</a>
     </nav>
+=======
+>>>>>>> main
     <main>
       {{{ body }}}
+       </div>
     </main>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
     <footer>
       Welcome to your virtual journal!
     </footer>
-  </div>
-
 </body>
 
 </html>
