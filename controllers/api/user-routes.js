@@ -1,7 +1,11 @@
 const router = require('express').Router();
+const { application } = require('express');
 const session = require('express-session');
 const { User } = require('../../models');
-const auth = require('../../utils/auth')
+const auth = require('../../utils/auth');
+const { route } = require('./post-routes');
+
+
 // GET /api/users --- ALL users
 router.get('/', (req, res) => {
     User.findAll({
@@ -163,5 +167,9 @@ router.post('/logout', (req, res) => {
 //     });
 // });
 
-module.exports = router;
+// router.get('/dashboard', (req, res) => {
+//   res.redirect('/posts')
+// })
 
+
+module.exports = router;
