@@ -12,12 +12,12 @@
                         </a>  -->
                     <div class="navbar-item  is-hoverable">
                         <a class="navbar-item">
-                                Dashboard
-                            </a>
+                            Dashboard
+                        </a>
                         <div class="navbar-dropdown">
                             <a class="navbar-item">
-                                    Logout
-                                </a>
+                                Logout
+                            </a>
                             <hr class="navbar-divider">
                             <div class="navbar-item">
                                 Login
@@ -65,8 +65,8 @@
                     <a class="navbar-item is-active">
                         Home
                     </a>
-                            <a href="/">Home</a>
-                        </a>
+                    <a href="/">Home</a>
+                    </a>
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
@@ -74,9 +74,9 @@
                         </a>
                         <div class="navbar-dropdown">
                             <a class="navbar-item">
-                                    <a href="/logout">Logout</a>
-                                </a>
-                           <!-- <a class="navbar-item">
+                                <a href="/logout">Logout</a>
+                            </a>
+                            <!-- <a class="navbar-item">
                                     Profile
                                 </a> -->
                             <hr class="navbar-divider">
@@ -191,21 +191,26 @@
 
         </section>
     </div>
-        
-        <!-- END ARTICLE FEED -->
-   
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
-        <script>
-             (function() {
-                const burger = document.querySelector('.burger');
-                const menu = document.querySelector('#'+burger.dataset.target);
-                    burger.addEventListener('click', function() {
-                    menu.classList.toggle('is-active');
-                    });
-            })();
-        </script>
 
- 
+    <!-- END ARTICLE FEED -->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+    <script>
+        (function () {
+            const burger = document.querySelector('.burger');
+            const menu = document.querySelector('#' + burger.dataset.target);
+            burger.addEventListener('click', function () {
+                menu.classList.toggle('is-active');
+            });
+        })();
+    </script>
+    <script src="/javascript/login.js"></script>
+    <script src="/javascript/add-post.js"></script>
+    <script src="/javascript/logout.js"></script>
+    <script src="/javascript/delete-post.js"></script>
+    <script src="/javascript/edit-post.js"></script>
+
+
 </body>
 
 </html>

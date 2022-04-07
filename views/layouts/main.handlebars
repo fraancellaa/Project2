@@ -11,26 +11,38 @@
 
 <body>
   <div class="wrapper">
+
     <header>
-      <h1>Blah-blah-blog</h1>
+      <h1>
+        <a href="/">blah blah blog</a>
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
     </header>
-    <nav>
-      <a href="/">Home</a>
-      <button id="logout" class="btn-no-style">Logout</button>
-      <a href="/login">Login</a>
-    </nav>
+
     <main>
       {{{ body }}}
-       </div>
     </main>
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+
     <footer>
       Welcome to your virtual journal!
     </footer>
   </div>
+
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  {{/if}}
+  <script src="/javascript/login.js"></script>
+  <script src="/javascript/add-post.js"></script>
+  <script src="/javascript/logout.js"></script>
+  <script src="/javascript/delete-post.js"></script>
+  <script src="/javascript/edit-post.js"></script>
 </body>
 
 </html>
