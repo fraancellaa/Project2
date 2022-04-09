@@ -21,7 +21,11 @@ Post.init({
     },
     created_at: {
         type: Date,
-    }
+    },
+    // user_id: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // }
 },
 {
     sequelize,

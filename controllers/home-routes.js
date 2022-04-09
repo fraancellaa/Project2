@@ -59,4 +59,5 @@ router.get('/posts', (req, res) => {
     res.render('posts', { title: 'Create a new Blog'});
 })
 
+
 module.exports = router;
