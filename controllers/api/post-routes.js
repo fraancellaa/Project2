@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const session = require('express-session');
-const { Post, User } = require('../../models/Post');
+const { Post} = require('../../models/');
 
 // get all users posts
 router.get('/', (req, res) => {
     Post.findAll({
        order: [['created_at', 'DESC']] ,
-       attributes: ['id', 'post_url', 'title', 'created_at'],
+       attributes: ['id', 'title', 'created_at'],
        include: [
            {
                model: User,
@@ -27,7 +26,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id,
         },
-        attributes: ['id', 'post_url', 'title', 'created_at'],
+        attributes: ['id', 'title', 'created_at'],
         include: [
             {
                 model: User,
@@ -49,18 +48,18 @@ router.get('/:id', (req, res) => {
 });
 
 // create a post route
-router.post('/', (req, res) => {
-    Post.create({
-        title: req.body.title,
-        post_url: req.body.post_url,
-        user_id: req.body.user_id
-    })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
+router.post('/', async (req, res) => {
+    try {
+        const createdPost = await Post.create({
+            id: req.body.id,
+            blog_title: req.body.blog_title,
+            blog_text: req.body.blog_text
+        });
+        res.status(200).json(createdComment);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
 
 
 //update a post's title
@@ -105,5 +104,6 @@ router.delete('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
 
 module.exports = router; 

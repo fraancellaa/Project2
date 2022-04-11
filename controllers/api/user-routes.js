@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { application } = require('express');
 const session = require('express-session');
 const { User } = require('../../models');
 const auth = require('../../utils/auth');
@@ -166,9 +167,9 @@ router.post('/logout', (req, res) => {
 //     });
 // });
 
-router.post('/posts', (req, res) => {
-
-})
+// router.get('/dashboard', (req, res) => {
+//   res.redirect('/posts')
+// })
 
 
 module.exports = router;

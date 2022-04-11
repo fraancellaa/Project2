@@ -11,25 +11,21 @@ Post.init({
         primaryKey: true,
         autoIncrement: true
     },
-    title: {
+    blog_title: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    post_url: {
+    blog_text: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isURL: true
-        }
     },
-    user_id: {
-        // user id is the user creating the post
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
-    }
+    created_at: {
+        type: Date,
+    },
+    // user_id: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // }
 },
 {
     sequelize,
