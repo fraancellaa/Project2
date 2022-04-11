@@ -11,7 +11,6 @@ const loginFormHandler = async (event) => {
             body: JSON.stringify({ email, password}),
             headers: { 'Content-type': 'application/json' },
         });
-
         if (response.ok) {
             console.log('something');
             document.location.replace('/dashboard');
