@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const session = require('express-session');
 const { User } = require('../../models');
-const auth = require('../../utils/auth')
+const auth = require('../../utils/auth');
+const { route } = require('./post-routes');
+
+
 // GET /api/users --- ALL users
 router.get('/', (req, res) => {
     User.findAll({
@@ -51,20 +54,6 @@ router.get('/', (req, res) => {
 
 //             res.json(dbUserData);
 //         });
-// });
-
-// 2nd time
-// router.post('/', (req, res) => {
-//     User.create({
-//         username: req.body.username,
-//         email: req.body.email,
-//         password: req.body.password
-//     })
-//     .then(dbUserData => res.json(dbUserData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
 // });
 
 // Create new user - sign up option
@@ -177,5 +166,9 @@ router.post('/logout', (req, res) => {
 //     });
 // });
 
-module.exports = router;
+router.post('/posts', (req, res) => {
 
+})
+
+
+module.exports = router;

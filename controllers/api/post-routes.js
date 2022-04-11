@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const session = require('express-session');
+const { Post, User } = require('../../models/Post');
 
 // get all users posts
 router.get('/', (req, res) => {
@@ -63,7 +64,7 @@ router.post('/', (req, res) => {
 
 
 //update a post's title
-router.put('/:id', (req, res) => {
+router.put('/posts/:id', (req, res) => {
     Post.update({
         title: req.body.title
     },

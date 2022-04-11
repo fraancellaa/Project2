@@ -102,4 +102,19 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
+router.get('/logout', (req, res) => {
+    if (!req.session) {
+        req.session.destroy(function(err) {
+            res.redirect('/homepage');
+        });
+    }
+    else {
+        res.redirect('/homepage');
+    }
+})
+
+router.get('/posts', (req, res) => {
+    res.render('posts', { title: 'Create a new Blog'});
+})
+
 module.exports = router;
