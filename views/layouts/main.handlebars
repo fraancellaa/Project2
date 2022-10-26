@@ -2,16 +2,24 @@
 <html lang="en">
 
 <head>
+  <!--TEST OF DYNAMIC HTML NOT SURE WHY THE SCRIPT LOCATION IN THE DEMO IS UP HERE - SEE URL BELOW-->
+  <script language="JavaScript">
+    function doChanges(e) {
+      e.style.color = "green";
+      e.style.fontSize = "20px";
+    }    
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> {{ title }}</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
 </head>
 
 <body>
   <div class="wrapper">
-<<<<<<< HEAD
 
     <header>
       <h1>
@@ -27,14 +35,13 @@
       </nav>
     </header>
 
-=======
->>>>>>> 9d1abce6796bead545dbb231e4e188301a98c943
     <main>
       {{{ body }}}
     </main>
 
     <footer>
       Welcome to your virtual journal!
+
     </footer>
   </div>
 
@@ -46,6 +53,10 @@
   <script src="/javascript/logout.js"></script>
   <script src="/javascript/delete-post.js"></script>
   <script src="/javascript/edit-post.js"></script>
+
+  <!--TEST BELOW AND ABOVE OF DYNAMIC HTML FROM https://www.c-sharpcorner.com/article/dynamic-html-using-handlebars-javascript/-->
+  <h3 onmouseover="doChanges(this)" style="color:black;font-size:18px">Welcome to Dynamic HTML!</h3>
 </body>
+
 
 </html>

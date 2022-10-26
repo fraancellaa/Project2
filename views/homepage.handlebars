@@ -34,6 +34,18 @@
 <html>
 
 <head>
+    <!--TEST OF DYNAMIC HTML NOT SURE WHY THE SCRIPT LOCATION IN THE DEMO IS UP HERE - SEE URL BELOW-->
+    <script language="JavaScript">
+        function changeMe() {
+            MyHeading.outerHTML = "<H1 ID=MyHeading>Dynamic HTML!</H1>";
+            MyHeading.style.color = "green";
+            MyText.innerText = "You can do the most amazing things with the least bit of effort.";
+            MyText.align = "center";
+            document.body.insertAdjacentHTML("BeforeEnd", "<P ALIGN=\"center\">Just give it a try!</P>");
+        }    
+    </script>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +58,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body onclick="changeMe()">
     <!-- START NAV -->
     <nav class="navbar" style="background-color: #4eb5f1;border-radius:50px; opacity: 85%;">
         <div class="container">
@@ -209,8 +221,9 @@
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/delete-post.js"></script>
     <script src="/javascript/edit-post.js"></script>
-
-
+    <!--TEST BELOW AND NOTED ABOVE OF DYNAMIC HTML FROM https://www.c-sharpcorner.com/article/dynamic-html-using-handlebars-javascript/-->
+    <h3 id="MyHeading">Welcome to Dynamic HTML!</h3>
+    <p id="MyText">Click anywhere on this page.</p>
 </body>
 
 </html>
